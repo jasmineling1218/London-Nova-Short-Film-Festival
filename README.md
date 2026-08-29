@@ -1,27 +1,7 @@
-# London Nova Short Film Festival — V4
+# London Nova Short Film Festival — V8
 
-This version consolidates the final visual direction:
-
-- Jupiter is the primary festival symbol and logo.
-- Cinema is the secondary visual language:
-  - projector
-  - projection beam
-  - cinema screen
-  - theater seating
-  - film-reel geometry
-- Black / charcoal / champagne-gold palette with restrained burgundy seating.
-- London-only inaugural edition in 2027.
-- Short film + experimental cinema remains the curatorial focus.
-- Instagram / YouTube / TikTok / X / Facebook are present as disabled footer placeholders.
-
-## Social links
-Replace each `href="#"` with the official account URL and remove `onclick="return false"` once accounts are created.
-
-## Before launch
-Add the final:
-- venue and festival dates
-- FilmFreeway URL
-- contact email
-- submission rules
-- privacy policy / terms
-- trademark/name clearance
+Refinements:
+- Cinema seats in the homepage illustration are now symmetrical, evenly aligned and more architectural.
+- Removed the descriptive visual label “Jupiter · projection · cinema · audience”.
+- Replaced it with the festival-facing line “London Nova · Inaugural Edition · 2027”.
+- All V7 curatorial, submission and contact-email improvements are preserved.
