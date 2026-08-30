@@ -32,6 +32,10 @@ a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit}
 .wrap{width:min(var(--max),calc(100% - 64px));margin:auto;position:relative;z-index:3}
 
+.brand-title,.footer-brand-title{position:relative}
+.brand-title:after{content:"";position:absolute;left:0;bottom:-10px;width:76px;height:6px;border-top:1px solid rgba(207,168,93,.65);border-radius:50%;transform:skewX(-24deg);opacity:.7}
+@media(max-width:720px){.brand-title:after{display:none}}
+
 /* Full-site ocean */
 .ocean-site{position:relative;isolation:isolate;min-height:100vh;background:
   radial-gradient(circle at 72% 7%,rgba(157,202,214,.10),transparent 22%),
@@ -54,9 +58,10 @@ button{font:inherit;color:inherit}
 
 header{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,rgba(2,13,20,.94),rgba(2,13,20,.72));backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
 .nav{min-height:90px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
-.brand{display:flex;align-items:center;gap:16px;min-width:300px}
-.brand svg{width:88px;height:48px;flex:none}
-.brand-title{font-family:Georgia,"Times New Roman",serif;font-size:26px;line-height:.92;letter-spacing:.015em;white-space:nowrap}
+.brand{display:flex;align-items:center;gap:18px;min-width:360px}
+.brand svg{width:104px;height:62px;flex:none;filter:drop-shadow(0 0 9px rgba(207,168,93,.08))}
+.brand-title{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:.93;letter-spacing:.035em;white-space:nowrap;font-weight:400;background:linear-gradient(180deg,#f0d89f 0%,#c99d4e 55%,#edce85 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-title .sub{display:block;font-size:.69em;letter-spacing:.12em;margin-top:5px}
 .navlinks{display:flex;justify-content:center;align-items:center;gap:30px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
 .navlinks>a,.nav-drop>summary{opacity:.86;transition:.2s;cursor:pointer;list-style:none}
 .navlinks>a:hover,.nav-drop>summary:hover{opacity:1;color:var(--gold-soft)}
@@ -134,11 +139,11 @@ h1 em{color:var(--gold-soft);font-weight:400}
 
 footer{position:relative;background:rgba(1,10,15,.72);border-top:1px solid var(--hair)}
 .footer-grid{padding:48px 0 36px;display:grid;grid-template-columns:1.55fr .85fr .9fr 1.2fr;gap:58px}
-.footer-brand{display:flex;gap:15px;align-items:flex-start}.footer-brand svg{width:88px;height:50px}.footer-brand-title{font-family:Georgia,serif;font-size:29px;line-height:.93}
+.footer-brand{display:flex;gap:16px;align-items:center}.footer-brand svg{width:92px;height:58px;flex:none}.footer-brand-title{font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:.95;letter-spacing:.035em;font-weight:400;background:linear-gradient(180deg,#efd59a 0%,#c89a49 58%,#e7c678 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.footer-brand-title .sub{display:block;font-size:.68em;letter-spacing:.11em;margin-top:4px}
 footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin:0 0 16px}footer a,footer p{display:block;color:#a7b5b8;font-size:13px;margin:7px 0}.social-row{display:flex;gap:26px;flex-wrap:wrap;padding:0 0 34px;color:#c1cacc}.social-row a:hover{color:var(--gold-soft)}.copyright{border-top:1px solid var(--hair);padding:24px 0 32px;color:#718083;font-size:10px;letter-spacing:.14em;text-transform:uppercase}
 
 @media(max-width:1100px){.nav{grid-template-columns:auto auto}.navlinks{display:none}.brand{min-width:auto}.hero .wrap{grid-template-columns:1fr}.edition-stamp{right:5%;bottom:6%}.edition-grid{grid-template-columns:1fr 1fr}.edition-intro{grid-column:1/-1}.edition-card{border-top:1px solid var(--hair)}.footer-grid{grid-template-columns:1fr 1fr}.manifesto-grid{gap:40px}}
-@media(max-width:720px){.wrap{width:min(100% - 34px,var(--max))}.nav{min-height:76px}.brand svg{width:62px}.brand-title{font-size:18px}.nav>.btn{display:none}.hero,.hero .wrap{min-height:auto}.hero .wrap{padding:88px 0 150px}.hero-ocean:before{width:120%;right:-45%;opacity:.6}.edition-stamp{width:150px;height:150px;right:20px;bottom:20px}.edition-stamp b{font-size:28px}.manifesto-grid{grid-template-columns:1fr}.section .wrap{padding:70px 0}.edition-grid{grid-template-columns:1fr}.edition-card,.edition-intro{border-right:0}.submit-inner{grid-template-columns:1fr}.submit-right{text-align:left}.footer-grid{grid-template-columns:1fr}.wave-a{width:180px}.hero .dot-grid{display:none}}
+@media(max-width:720px){.wrap{width:min(100% - 34px,var(--max))}.nav{min-height:76px}.brand{gap:10px;min-width:auto}.brand svg{width:68px;height:46px}.brand-title{font-size:17px}.nav>.btn{display:none}.hero,.hero .wrap{min-height:auto}.hero .wrap{padding:88px 0 150px}.hero-ocean:before{width:120%;right:-45%;opacity:.6}.edition-stamp{width:150px;height:150px;right:20px;bottom:20px}.edition-stamp b{font-size:28px}.manifesto-grid{grid-template-columns:1fr}.section .wrap{padding:70px 0}.edition-grid{grid-template-columns:1fr}.edition-card,.edition-intro{border-right:0}.submit-inner{grid-template-columns:1fr}.submit-right{text-align:left}.footer-grid{grid-template-columns:1fr}.wave-a{width:180px}.hero .dot-grid{display:none}}
 </style>
 </head>
 <body>
@@ -147,8 +152,15 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="London Nova Short Film Festival">
-      <svg viewBox="0 0 110 60" fill="none" aria-hidden="true"><ellipse cx="53" cy="30" rx="23" ry="20" stroke="var(--gold)" stroke-width="1.7"/><path d="M31 23c13-3 31-3 47 1M30 30c16-4 34-3 48 1M32 37c14-3 29-2 43 1" stroke="var(--gold)" stroke-width="1.3"/><ellipse cx="54" cy="30" rx="45" ry="11" transform="rotate(-6 54 30)" stroke="var(--gold)" stroke-width="1.7"/><circle cx="9" cy="27" r="2" fill="none" stroke="var(--gold)" stroke-width="1.4"/></svg>
-      <div class="brand-title">LONDON NOVA<br>SHORT FILM FESTIVAL</div>
+      <svg viewBox="0 0 140 82" fill="none" aria-hidden="true">
+        <defs><linearGradient id="novaGold" x1="18" y1="14" x2="118" y2="68" gradientUnits="userSpaceOnUse"><stop stop-color="#f0d89f"/><stop offset=".45" stop-color="#d0a65a"/><stop offset="1" stop-color="#b98331"/></linearGradient></defs>
+        <path d="M10 62C25 56 35 48 43 36C48 28 55 22 64 22C77 22 85 32 84 45C83 56 76 62 67 63C59 64 52 60 49 53C56 56 63 54 67 49C71 44 70 37 66 33C62 29 56 29 52 33" stroke="url(#novaGold)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 66C34 62 50 63 66 68C82 73 99 72 122 61" stroke="url(#novaGold)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M23 72C42 69 58 70 73 74C88 78 104 76 130 66" stroke="url(#novaGold)" stroke-width="1.55" stroke-linecap="round" opacity=".88"/>
+        <path d="M36 55C40 48 45 44 51 43C57 42 61 45 62 49" stroke="url(#novaGold)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="91" cy="29" r="3" stroke="url(#novaGold)" stroke-width="1.8"/><circle cx="101" cy="20" r="1.7" fill="#d3aa5f"/><circle cx="108" cy="34" r="1.2" fill="#d3aa5f"/>
+      </svg>
+      <div class="brand-title">LONDON NOVA<span class="sub">SHORT FILM FESTIVAL</span></div>
     </a>
     <nav class="navlinks">
       <a href="#manifesto">About</a>
@@ -213,7 +225,14 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 
 <footer id="contact">
   <div class="wrap footer-grid">
-    <div><div class="footer-brand"><svg viewBox="0 0 110 60" fill="none"><ellipse cx="53" cy="30" rx="23" ry="20" stroke="var(--gold)" stroke-width="1.7"/><path d="M31 23c13-3 31-3 47 1M30 30c16-4 34-3 48 1M32 37c14-3 29-2 43 1" stroke="var(--gold)" stroke-width="1.3"/><ellipse cx="54" cy="30" rx="45" ry="11" transform="rotate(-6 54 30)" stroke="var(--gold)" stroke-width="1.7"/></svg><div class="footer-brand-title">LONDON NOVA<br>SHORT FILM FESTIVAL</div></div></div>
+    <div><div class="footer-brand"><svg viewBox="0 0 140 82" fill="none" >
+        <defs><linearGradient id="novaGold" x1="18" y1="14" x2="118" y2="68" gradientUnits="userSpaceOnUse"><stop stop-color="#f0d89f"/><stop offset=".45" stop-color="#d0a65a"/><stop offset="1" stop-color="#b98331"/></linearGradient></defs>
+        <path d="M10 62C25 56 35 48 43 36C48 28 55 22 64 22C77 22 85 32 84 45C83 56 76 62 67 63C59 64 52 60 49 53C56 56 63 54 67 49C71 44 70 37 66 33C62 29 56 29 52 33" stroke="url(#novaGold)" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 66C34 62 50 63 66 68C82 73 99 72 122 61" stroke="url(#novaGold)" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M23 72C42 69 58 70 73 74C88 78 104 76 130 66" stroke="url(#novaGold)" stroke-width="1.55" stroke-linecap="round" opacity=".88"/>
+        <path d="M36 55C40 48 45 44 51 43C57 42 61 45 62 49" stroke="url(#novaGold)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="91" cy="29" r="3" stroke="url(#novaGold)" stroke-width="1.8"/><circle cx="101" cy="20" r="1.7" fill="#d3aa5f"/><circle cx="108" cy="34" r="1.2" fill="#d3aa5f"/>
+      </svg><div class="footer-brand-title">LONDON NOVA<span class="sub">SHORT FILM FESTIVAL</span></div></div></div>
     <div><h4>Festival</h4><a href="#manifesto">About</a><a href="#edition">1st Edition</a><a href="#jury">Jury</a></div>
     <div id="rules"><h4>Submissions</h4><a href="#submit">FilmFreeway</a><p>Rules & Terms · Soon</p><p>FAQ · Soon</p></div>
     <div><h4>Contact</h4><p>London, United Kingdom</p><a href="mailto:team@koinovastudio.co.uk">team@koinovastudio.co.uk</a></div>
