@@ -148,6 +148,19 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 
 .category-section{padding-top:0!important}.category-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end;margin-bottom:42px}.category-head p{margin:0;color:#cbd5d7;max-width:650px}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--hair)}.category-card{min-height:285px;padding:34px 30px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:linear-gradient(180deg,rgba(9,49,64,.13),rgba(0,10,15,.08));position:relative}.category-no{font-family:Georgia,serif;color:var(--gold);font-size:13px;letter-spacing:.12em}.category-card h3{font-size:28px;line-height:1.05;margin:38px 0 16px}.category-card p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.category-question{display:block;margin-top:22px;color:var(--gold-soft);font-family:Georgia,serif;font-style:italic;font-size:14px}.category-card:hover{background:linear-gradient(180deg,rgba(16,74,89,.22),rgba(0,10,15,.10))}@media(max-width:900px){.category-grid{grid-template-columns:1fr 1fr}.category-head{grid-template-columns:1fr;gap:22px}}@media(max-width:600px){.category-grid{grid-template-columns:1fr}}
 .filmmaker-welcome{display:none;margin-bottom:18px;color:rgba(226,201,135,.68);font-family:Georgia,serif;font-size:13px;font-style:italic;letter-spacing:.035em}.filmmaker-welcome.show{display:block}@media(max-width:720px){.filmmaker-welcome{font-size:12px;margin-bottom:14px}}
+
+/* Hover-expand navigation and submission controls */
+.nav-drop:hover .nav-menu,.nav-drop:focus-within .nav-menu{display:block}
+.nav-drop .nav-menu{display:none}
+.nav-drop[open] .nav-menu{display:block}
+.nav-account{white-space:nowrap}
+.submit-expand{position:relative;display:inline-flex;align-items:stretch;vertical-align:middle}
+.submit-expand .submit-primary{position:relative;z-index:2}
+.submit-expand .submit-secondary{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;padding-left:0;padding-right:0;border-left:0;transform:translateX(-8px);transition:max-width .32s ease,opacity .24s ease,padding .32s ease,transform .32s ease}
+.submit-expand:hover .submit-secondary,.submit-expand:focus-within .submit-secondary{max-width:230px;opacity:1;padding-left:20px;padding-right:20px;transform:translateX(0)}
+.submit-expand.compact .btn{min-height:42px;padding-top:10px;padding-bottom:10px}
+@media(max-width:1100px){.nav-actions{display:flex;gap:10px}.nav-actions .submit-expand{display:none}}
+@media(max-width:720px){.submit-expand{display:flex;flex-wrap:wrap}.submit-expand .submit-secondary{max-width:none;opacity:1;padding-left:20px;padding-right:20px;transform:none;border-left:1px solid var(--gold);margin-top:8px}}
 </style>
 </head>
 <body>
@@ -160,7 +173,14 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
       <div class="brand-title">LONDON NOVA<span class="sub">SHORT FILM FESTIVAL</span></div>
     </a>
     <nav class="navlinks">
-      <a href="#manifesto">About</a>
+      <details class="nav-drop">
+        <summary>About</summary>
+        <div class="nav-menu">
+          <a href="#manifesto"><span class="nav-icon">◌</span><span><strong>Curatorial Vision</strong><small>Why London Nova exists</small></span></a>
+          <a href="rules.html"><span class="nav-icon">§</span><span><strong>Rules & Terms</strong><small>Eligibility, rights and submission terms</small></span></a>
+          <a href="#jury"><span class="nav-icon">◯</span><span><strong>Jury Philosophy</strong><small>How films are considered</small></span></a>
+        </div>
+      </details>
       <details class="nav-drop">
         <summary>1st Edition</summary>
         <div class="nav-menu">
@@ -170,9 +190,16 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
           <a href="#feedback"><span class="nav-icon">◔</span><span><strong>Feedback</strong><small>Filmmaker & audience dialogue</small></span></a>
         </div>
       </details>
-      <a href="#submit">Submit</a><a href="direct-submit.html">Direct Submit</a><a href="rules.html">Rules & Terms</a><a href="#contact">Contact</a>
+      <a href="#submit">Submit</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-account" href="account.html">My Account</a>
     </nav>
-    <a class="btn" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">Submit on FilmFreeway</a>
+    <div class="nav-actions">
+      <div class="submit-expand compact">
+        <a class="btn submit-primary" href="direct-submit.html">Submit your film</a>
+        <a class="btn submit-secondary" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">FilmFreeway</a>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -187,7 +214,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
       <div class="kicker">New cinematic language. New generation.</div>
       <h1>WE WANT TO SEE<br><em>YOU</em> IN YOUR FILM.</h1>
       <p class="lead">An independent London festival for bold short-form cinema, auteur voices, experimentation and filmmakers developing a distinct cinematic language.</p>
-      <div class="hero-actions"><a class="btn arrow" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">Submit your film</a><a class="btn arrow" href="#manifesto">About the festival</a></div>
+      <div class="hero-actions"><div class="submit-expand"><a class="btn arrow submit-primary" href="direct-submit.html">Submit your film</a><a class="btn submit-secondary" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">Submit on FilmFreeway</a></div><a class="btn arrow" href="#manifesto">About the festival</a></div>
     </div>
   </div>
   <div class="edition-stamp"><span>1st Edition</span><b>2026</b><i>London, UK</i></div>
@@ -232,7 +259,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 
 <section class="submit-band" id="submit">
   <div class="wave-flat wave-c"><svg viewBox="0 0 230 74" fill="none"><path d="M0 45c17-17 30-17 47 0s30 17 47 0 30-17 47 0 30 17 47 0" stroke="var(--gold)" stroke-width="1"/><path d="M9 58c14-12 27-12 41 0s27 12 41 0 27-12 41 0" stroke="var(--gold)" stroke-width=".8" opacity=".55"/></svg></div>
-  <div class="wrap submit-inner"><div><div class="section-label">Submit your film</div><h2>YOUR STORY.<br><em>OUR SCREEN.</em></h2><p>Make something personal, strange, beautiful, difficult, quiet, angry or hard to categorise. Whatever you make, let us see you in it.</p></div><div class="submit-right"><a class="btn arrow" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">Submit on FilmFreeway</a><a class="btn arrow" href="direct-submit.html" style="margin-left:10px">Submit Directly</a><p style="font-size:11px;color:var(--muted);margin-top:12px">Opening September 1 · 1st Edition · London 2026</p></div></div>
+  <div class="wrap submit-inner"><div><div class="section-label">Submit your film</div><h2>YOUR STORY.<br><em>OUR SCREEN.</em></h2><p>Make something personal, strange, beautiful, difficult, quiet, angry or hard to categorise. Whatever you make, let us see you in it.</p></div><div class="submit-right"><div class="submit-expand"><a class="btn arrow submit-primary" href="direct-submit.html">Submit your film</a><a class="btn submit-secondary" href="https://filmfreeway.com/festivals/99036?utm_campaign=London+Nova+Short+Film+Festival&utm_medium=External&utm_source=Submission+Button" target="_blank" rel="noopener noreferrer">Submit on FilmFreeway</a></div><p style="font-size:11px;color:var(--muted);margin-top:12px">Direct submission is the primary route · FilmFreeway remains available as an alternative.</p></div></div>
 </section>
 </main>
 
