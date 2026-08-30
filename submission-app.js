@@ -97,8 +97,9 @@ $("submissionForm").addEventListener("submit", async(e)=>{
     });
     const data=await response.json();
     if(!response.ok) throw new Error(data.error||"Could not start payment.");
-    if(!data.url) throw new Error("No Stripe Checkout URL returned.");
-    window.location.href=data.url;
+    const checkoutUrl = data.checkout_url || data.url;
+    if(!checkoutUrl) throw new Error("No Stripe Checkout URL returned.");
+    window.location.assign(checkoutUrl);
   }catch(err){$("formStatus").innerHTML='<span class="error">'+err.message+'</span>';}
 });
 (async()=>{await showSession();await loadDraft();renderSummary();})();
