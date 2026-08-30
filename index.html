@@ -154,13 +154,17 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 .nav-drop .nav-menu{display:none}
 .nav-drop[open] .nav-menu{display:block}
 .nav-account{white-space:nowrap}
-.submit-expand{position:relative;display:inline-flex;align-items:stretch;vertical-align:middle}
+.submit-expand{position:relative;display:inline-flex;align-items:stretch;vertical-align:middle;isolation:isolate}
 .submit-expand .submit-primary{position:relative;z-index:2}
-.submit-expand .submit-secondary{max-width:0;opacity:0;overflow:hidden;white-space:nowrap;padding-left:0;padding-right:0;border-left:0;transform:translateX(-8px);transition:max-width .32s ease,opacity .24s ease,padding .32s ease,transform .32s ease}
-.submit-expand:hover .submit-secondary,.submit-expand:focus-within .submit-secondary{max-width:230px;opacity:1;padding-left:20px;padding-right:20px;transform:translateX(0)}
+/* Stable slide-out: no max-width/layout animation, which can retrigger :hover and flicker. */
+.submit-expand .submit-secondary{position:absolute;left:calc(100% - 1px);top:0;height:100%;z-index:3;opacity:0;visibility:hidden;pointer-events:none;white-space:nowrap;transform:translateX(-10px);transition:opacity .18s ease,transform .22s ease,visibility 0s linear .22s;box-shadow:none}
+.submit-expand:hover .submit-secondary,.submit-expand:focus-within .submit-secondary{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(0);transition:opacity .18s ease,transform .22s ease,visibility 0s}
 .submit-expand.compact .btn{min-height:42px;padding-top:10px;padding-bottom:10px}
+.hero-actions .submit-expand{margin-right:0}
+.hero-actions .submit-expand:hover,.hero-actions .submit-expand:focus-within{z-index:10}
+.submit-right .submit-expand:hover,.submit-right .submit-expand:focus-within{z-index:10}
 @media(max-width:1100px){.nav-actions{display:flex;gap:10px}.nav-actions .submit-expand{display:none}}
-@media(max-width:720px){.submit-expand{display:flex;flex-wrap:wrap}.submit-expand .submit-secondary{max-width:none;opacity:1;padding-left:20px;padding-right:20px;transform:none;border-left:1px solid var(--gold);margin-top:8px}}
+@media(max-width:720px){.submit-expand{display:flex;flex-wrap:wrap}.submit-expand .submit-secondary{position:static;height:auto;opacity:1;visibility:visible;pointer-events:auto;transform:none;margin-top:8px;margin-left:8px}}
 </style>
 </head>
 <body>
