@@ -1,3 +1,3 @@
-# London Nova Short Film Festival — V16
+# London Nova Short Film Festival — V18
 
-Deep Sea visual retained. Brand mark redesigned as an original gold wave crest with a refined gold serif wordmark. No IMDb qualifying claim. 1st Edition remains London 2027.
+Refinement: replaced the header and footer logo asset with the standalone gold wave emblem only, removing duplicated text inside the logo image while preserving the existing deep-ocean website design and six competition categories.
