@@ -89,15 +89,20 @@ $("submissionForm").addEventListener("submit", async(e)=>{
     if(p.runtime_minutes>30) throw new Error("Running time must be 30 minutes or less.");
     if(!p.categories.length) throw new Error("Choose at least one category.");
     const row=await saveDraft();
-    const {data:{session}} = await sb.auth.getSession();
-    const response = await fetch(cfg.SUPABASE_URL+"/functions/v1/create-checkout",{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Authorization":"Bearer "+session.access_token},
-      body:JSON.stringify({submission_id:row.id})
+    const { data, error } = await sb.functions.invoke("create-checkout", {
+      body: { submission_id: row.id }
     });
-    const data=await response.json();
-    if(!response.ok) throw new Error(data.error||"Could not start payment.");
-    const checkoutUrl = data.checkout_url || data.url;
+    if(error){
+      let message = error.message || "Could not start payment.";
+      try{
+        if(error.context){
+          const detail = await error.context.json();
+          if(detail?.error) message = detail.error;
+        }
+      }catch{}
+      throw new Error(message);
+    }
+    const checkoutUrl = data?.checkout_url || data?.url;
     if(!checkoutUrl) throw new Error("No Stripe Checkout URL returned.");
     window.location.assign(checkoutUrl);
   }catch(err){$("formStatus").innerHTML='<span class="error">'+err.message+'</span>';}
