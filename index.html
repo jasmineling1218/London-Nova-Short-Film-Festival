@@ -147,6 +147,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 @media(max-width:720px){.wrap{width:min(100% - 34px,var(--max))}.nav{min-height:76px}.brand{gap:10px;min-width:auto}.brand svg{width:68px;height:46px}.brand-logo-img{width:72px;height:42px}.brand-title{font-size:17px}.nav>.btn{display:none}.hero,.hero .wrap{min-height:auto}.hero .wrap{padding:88px 0 150px}.hero-ocean:before{width:120%;right:-45%;opacity:.6}.edition-stamp{width:150px;height:150px;right:20px;bottom:20px}.edition-stamp b{font-size:28px}.manifesto-grid{grid-template-columns:1fr}.section .wrap{padding:70px 0}.edition-grid{grid-template-columns:1fr}.edition-card,.edition-intro{border-right:0}.submit-inner{grid-template-columns:1fr}.submit-right{text-align:left}.footer-grid{grid-template-columns:1fr}.wave-a{width:180px}.hero .dot-grid{display:none}}
 
 .category-section{padding-top:0!important}.category-head{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:end;margin-bottom:42px}.category-head p{margin:0;color:#cbd5d7;max-width:650px}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--hair)}.category-card{min-height:285px;padding:34px 30px;border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);background:linear-gradient(180deg,rgba(9,49,64,.13),rgba(0,10,15,.08));position:relative}.category-no{font-family:Georgia,serif;color:var(--gold);font-size:13px;letter-spacing:.12em}.category-card h3{font-size:28px;line-height:1.05;margin:38px 0 16px}.category-card p{color:var(--muted);font-size:13px;line-height:1.7;margin:0}.category-question{display:block;margin-top:22px;color:var(--gold-soft);font-family:Georgia,serif;font-style:italic;font-size:14px}.category-card:hover{background:linear-gradient(180deg,rgba(16,74,89,.22),rgba(0,10,15,.10))}@media(max-width:900px){.category-grid{grid-template-columns:1fr 1fr}.category-head{grid-template-columns:1fr;gap:22px}}@media(max-width:600px){.category-grid{grid-template-columns:1fr}}
+.filmmaker-welcome{display:none;margin-bottom:18px;color:rgba(226,201,135,.68);font-family:Georgia,serif;font-size:13px;font-style:italic;letter-spacing:.035em}.filmmaker-welcome.show{display:block}@media(max-width:720px){.filmmaker-welcome{font-size:12px;margin-bottom:14px}}
 </style>
 </head>
 <body>
@@ -182,6 +183,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
   <div class="dot-grid"></div>
   <div class="wrap">
     <div class="hero-copy">
+      <div id="filmmakerWelcome" class="filmmaker-welcome" aria-live="polite"></div>
       <div class="kicker">New cinematic language. New generation.</div>
       <h1>WE WANT TO SEE<br><em>YOU</em> IN YOUR FILM.</h1>
       <p class="lead">An independent London festival for bold short-form cinema, auteur voices, experimentation and filmmakers developing a distinct cinematic language.</p>
@@ -245,6 +247,28 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
   <div class="wrap copyright">© 2026 London Nova Short Film Festival. All rights reserved.</div>
 </footer>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script>
+(async()=>{
+  if(!window.LN_CONFIG || !window.supabase) return;
+  const client=supabase.createClient(LN_CONFIG.SUPABASE_URL,LN_CONFIG.SUPABASE_PUBLISHABLE_KEY);
+  const {data:{user}}=await client.auth.getUser();
+  if(!user || user.is_anonymous) return;
+  let name=(user.user_metadata?.display_name||user.user_metadata?.full_name||'').trim();
+  if(!name){
+    const {data}=await client.from('submissions').select('filmmaker_name').not('filmmaker_name','is',null).order('updated_at',{ascending:false}).limit(1).maybeSingle();
+    name=(data?.filmmaker_name||'').trim();
+  }
+  if(!name && user.email) name=user.email.split('@')[0];
+  if(!name) name='Filmmaker';
+  const el=document.getElementById('filmmakerWelcome');
+  if(el){
+    el.textContent=`Welcome back, ${name}. What are you seeing differently today?`;
+    el.classList.add('show');
+  }
+})();
+</script>
 <script>
 // Close the 1st Edition dropdown when clicking outside.
 document.addEventListener('click', (e) => {
