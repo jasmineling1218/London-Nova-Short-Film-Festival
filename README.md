@@ -1,7 +1,10 @@
-# London Nova Short Film Festival — V8
+# London Nova Short Film Festival — V15 Deep Sea Edition
 
-Refinements:
-- Cinema seats in the homepage illustration are now symmetrical, evenly aligned and more architectural.
-- Removed the descriptive visual label “Jupiter · projection · cinema · audience”.
-- Replaced it with the festival-facing line “London Nova · Inaugural Edition · 2027”.
-- All V7 curatorial, submission and contact-email improvements are preserved.
+- Re-coded deep-sea visual system across the whole site.
+- Restored the original gold Jupiter logo and serif festival wordmark.
+- Removed all IMDb qualification language.
+- Added subtle flat wave motifs over the ocean texture.
+- 1st Edition menu includes Awards, Screening, Jury and Feedback.
+- Curatorial Manifesto remains collapsible.
+- RedNote is included correctly in social links.
+- Festival year set to 2027.
