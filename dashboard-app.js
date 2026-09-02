@@ -10,7 +10,7 @@ const prettyStatus=s=>({draft:'Draft',awaiting_payment:'Awaiting payment',submit
   document.getElementById('welcomeTitle').textContent='WELCOME, '+name.toUpperCase();
   document.getElementById('accountStrip').hidden=false;document.getElementById('accountName').textContent=name;document.getElementById('accountEmail').textContent=user.email||'';document.getElementById('emailState').textContent=user.email_confirmed_at?'Email verified':'Email confirmation pending';
   document.getElementById('signoutBtn').onclick=async()=>{await sb.auth.signOut();location.replace('account.html')};
-  try{const {data:isAdmin}=await sb.rpc('is_admin');if(isAdmin===true)document.getElementById('editorialLink').hidden=false}catch{}
+  try{const {data:isAdmin}=await sb.rpc('is_admin');if(isAdmin===true){document.getElementById('editorialLink').hidden=false;document.getElementById('adminFeedbackLink').hidden=false}}catch{}
   const {data,error}=await sb.from('submissions').select('*').order('updated_at',{ascending:false});
   if(error){status.textContent=error.message;return}
   if(!data?.length){cards.innerHTML='<div class="panel"><h2>No submissions yet.</h2><p class="summary">Start a draft when you are ready. You can return and edit it before payment.</p><p><a class="btn primary" href="direct-submit.html">Start a submission</a></p></div>';return}
