@@ -1,22 +1,121 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cinema A · London Nova Short Film Festival</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cinema A · London Nova Short Film Festival</title>
 <style>
-:root{--bg:#03131c;--glass:rgba(4,24,34,.50);--line:rgba(207,167,84,.28);--gold:#d6ad59;--ivory:#f4f0e8;--muted:#aebbc0}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ivory);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;background:#03131c;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;z-index:-3;background:radial-gradient(ellipse at 50% -8%,rgba(255,247,222,.17) 0,rgba(83,137,151,.11) 18%,transparent 42%),linear-gradient(180deg,#021019 0%,#06313e 36%,#04232e 68%,#03131c 100%)}
-body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:repeating-radial-gradient(ellipse at 28% 2%,transparent 0 38px,rgba(215,178,99,.035) 39px 40px),repeating-radial-gradient(ellipse at 72% 110%,transparent 0 52px,rgba(73,137,153,.035) 53px 54px);opacity:.8}
-.spotlight{position:fixed;left:50%;top:-80px;transform:translateX(-50%);width:min(78vw,1100px);height:430px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(255,245,215,.20),rgba(163,205,211,.07) 28%,transparent 67%);filter:blur(5px)}
-.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.top{position:sticky;top:0;z-index:20;background:rgba(2,15,22,.66);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav{height:84px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--gold);font-family:Georgia,serif;letter-spacing:.04em}.brand img{width:72px;height:44px;object-fit:contain}.brand span{display:block;font-size:12px;letter-spacing:.12em}.back{color:#ddd;text-decoration:none;text-transform:uppercase;letter-spacing:.13em;font-size:11px;border:1px solid var(--line);padding:13px 18px;border-radius:999px;background:rgba(255,255,255,.025)}
-main{padding:76px 0 100px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:end;margin-bottom:46px}.hero h1{font-family:Georgia,serif;font-size:clamp(48px,6vw,88px);line-height:.95;font-weight:400;margin:16px 0 20px}.hero p{color:#c8d1d3;font-size:17px;line-height:1.7;max-width:680px}.facts{border:1px solid var(--line);border-radius:24px;background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:28px}.fact{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}.fact:last-child{border:0}.fact small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;font-size:9px;margin-bottom:7px}.fact strong{font-size:15px;font-weight:500}
-.gallery-wrap{position:relative;width:min(960px,100%);margin:28px auto 56px}.gallery{position:relative;overflow:hidden;border-radius:28px;border:1px solid rgba(255,255,255,.10);background:#061821;box-shadow:0 30px 90px rgba(0,0,0,.25);aspect-ratio:16/9}.slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease}.slide.active{opacity:1}.slide img{width:100%;height:100%;object-fit:cover;display:block}.gallery::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 65%,rgba(1,13,20,.18))}
-.arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(2,17,24,.30);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;font-size:26px;line-height:1;cursor:pointer;transition:.25s}.arrow:hover{background:rgba(7,35,46,.58);border-color:rgba(214,173,89,.55)}.arrow.prev{left:18px}.arrow.next{right:18px}.dots{display:flex;justify-content:center;gap:8px;margin-top:16px}.dot{width:7px;height:7px;border-radius:50%;border:0;background:rgba(255,255,255,.28);padding:0;cursor:pointer}.dot.active{background:var(--gold)}
-.map-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:22px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:24px;background:var(--glass);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);overflow:hidden}.address{padding:34px}.address h2{font-family:Georgia,serif;font-size:34px;font-weight:400;margin:8px 0 18px}.address p{color:var(--muted);line-height:1.75}.address a{display:inline-block;margin-top:12px;color:var(--gold);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:.14em}.map iframe{width:100%;height:100%;min-height:390px;border:0;filter:saturate(.65) contrast(.95)}.note{margin-top:24px;color:#8fa1a7;font-size:12px;line-height:1.7}
-@media(max-width:800px){.hero,.map-grid{grid-template-columns:1fr}.wrap{width:min(100% - 28px,1180px)}.nav{height:72px}.brand img{width:56px}.hero{gap:20px}.gallery{aspect-ratio:4/3}.arrow{width:44px;height:44px}.gallery-wrap{margin-top:18px}}
-</style></head><body><div class="spotlight"></div><header class="top"><div class="wrap nav"><a class="brand" href="index.html"><img src="london-nova-wave-film-emblem.png" alt="London Nova"><div>LONDON NOVA<span>SHORT FILM FESTIVAL</span></div></a><a class="back" href="index.html">← Back to festival</a></div></header>
-<main class="wrap"><section class="hero"><div><div class="eyebrow">1st Edition · Official Screening Venue</div><h1>Cinema A<br><em>London Film School</em></h1><p>London Nova Short Film Festival's inaugural screening takes place at Cinema A in the London Film School's Shelton Street Building, in the heart of Covent Garden.</p></div><aside class="facts"><div class="fact"><small>Date</small><strong>13 March 2027</strong></div><div class="fact"><small>Venue</small><strong>Cinema A · London Film School</strong></div><div class="fact"><small>Address</small><strong>24 Shelton Street, London, WC2H 9UB</strong></div><div class="fact"><small>Capacity</small><strong>Up to 100 seats</strong></div></aside></section>
-<section class="gallery-wrap" aria-label="Cinema A gallery"><div class="gallery" id="venueGallery"><div class="slide active"><img src="cinemaA2.jpeg" alt="Cinema A at London Film School"></div><div class="slide"><img src="cinemaA3.jpeg" alt="Cinema A screening room"></div><div class="slide"><img src="cinemaA4.jpeg" alt="Cinema A interior"></div><div class="slide"><img src="cinemaA5.jpeg" alt="London Film School Shelton Street exterior"></div><button class="arrow prev" type="button" aria-label="Previous venue image">‹</button><button class="arrow next" type="button" aria-label="Next venue image">›</button></div><div class="dots" aria-label="Gallery navigation"><button class="dot active" aria-label="Image 1"></button><button class="dot" aria-label="Image 2"></button><button class="dot" aria-label="Image 3"></button><button class="dot" aria-label="Image 4"></button></div></section>
-<section class="map-grid"><div class="panel address"><div class="eyebrow">Getting here</div><h2>Covent Garden,<br>Central London.</h2><p><strong>London Film School<br>24 Shelton Street<br>London WC2H 9UB</strong></p><p>Just a few minutes’ walk from Covent Garden, the Shelton Street venue puts the festival in the heart of central London, with theatres, cafés and excellent transport links all close by.</p><a href="https://www.google.com/maps/search/?api=1&query=London+Film+School+24+Shelton+Street+London+WC2H+9UB" target="_blank" rel="noopener">Open in Google Maps ↗</a></div><div class="panel map"><iframe title="Google Map — London Film School Shelton Street" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=London%20Film%20School%2C%2024%20Shelton%20Street%2C%20London%20WC2H%209UB&output=embed"></iframe></div></section><p class="note">Screening details and attendee information will be updated as the festival approaches.</p></main>
+:root{--bg:#02131c;--glass:rgba(3,25,35,.48);--line:rgba(207,167,84,.28);--gold:#d6ad59;--gold-soft:#ead4a2;--ivory:#f4f0e8;--muted:#aebbc0;--hair:rgba(255,255,255,.075);--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ivory);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;background:#02131c;overflow-x:hidden}a{color:inherit;text-decoration:none}
+.ocean-site{min-height:100vh;position:relative;isolation:isolate;background:linear-gradient(180deg,#021019 0%,#073340 38%,#042633 66%,#02131c 100%)}
+.ocean-site:before{content:"";position:fixed;inset:0;z-index:-4;pointer-events:none;opacity:.55;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='920' height='920' viewBox='0 0 920 920'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.009 .025' numOctaves='4' seed='21'/%3E%3CfeColorMatrix values='0 0 0 0 0.02 0 0 0 0 0.18 0 0 0 0 0.24 0 0 0 .95 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:1050px 1050px;mix-blend-mode:screen}
+.ocean-site:after{content:"";position:fixed;inset:0;z-index:-3;pointer-events:none;background:repeating-radial-gradient(ellipse at 20% 2%,transparent 0 39px,rgba(225,241,243,.035) 40px 41px,transparent 42px 82px),repeating-radial-gradient(ellipse at 86% 78%,transparent 0 48px,rgba(75,148,165,.042) 49px 50px,transparent 51px 98px),linear-gradient(180deg,rgba(1,7,11,.10),rgba(1,7,11,.52));opacity:.78}
+.spotlight{position:fixed;left:50%;top:-180px;transform:translateX(-50%);width:min(82vw,1280px);height:650px;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(255,246,219,.28) 0%,rgba(181,220,225,.11) 24%,rgba(71,131,147,.05) 41%,transparent 68%);filter:blur(16px)}
+.grain{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.1;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='.35'/%3E%3C/svg%3E")}
+.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+header{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,rgba(2,13,20,.94),rgba(2,13,20,.72));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--hair)}
+.nav{min-height:90px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}.brand{display:flex;align-items:center;gap:16px;min-width:360px}.brand-logo-img{width:104px;height:58px;object-fit:contain;flex:none;filter:drop-shadow(0 0 10px rgba(207,168,93,.12))}.brand-title{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:.93;letter-spacing:.035em;white-space:nowrap;font-weight:400;background:linear-gradient(180deg,#f0d89f 0%,#c99d4e 55%,#edce85 100%);-webkit-background-clip:text;background-clip:text;color:transparent}.brand-title .sub{display:block;font-size:.69em;letter-spacing:.12em;margin-top:5px}
+.navlinks{display:flex;justify-content:center;align-items:center;gap:30px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}.navlinks>a,.nav-drop>summary{opacity:.86;transition:.2s;cursor:pointer;list-style:none}.navlinks>a:hover,.nav-drop>summary:hover{opacity:1;color:var(--gold-soft)}.nav-drop{position:relative}.nav-drop>summary::-webkit-details-marker{display:none}.nav-drop>summary:after{content:"⌄";margin-left:6px;color:var(--gold)}.nav-menu{position:absolute;top:31px;left:-22px;width:240px;background:rgba(2,13,20,.96);border:1px solid var(--line);padding:9px;box-shadow:0 18px 45px rgba(0,0,0,.35);display:none}.nav-drop:hover .nav-menu,.nav-drop:focus-within .nav-menu,.nav-drop[open] .nav-menu{display:block}.nav-menu a{display:grid;grid-template-columns:34px 1fr;gap:10px;padding:12px;border-bottom:1px solid rgba(255,255,255,.06)}.nav-menu a:last-child{border-bottom:0}.nav-menu strong{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}.nav-menu small{display:block;color:var(--muted);font-size:11px;margin-top:2px}.nav-icon{font-family:Georgia,serif;color:var(--gold);font-size:20px}.nav-account{white-space:nowrap}.nav-actions{display:flex;align-items:center}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--gold);background:transparent;padding:13px 18px;min-height:46px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;transition:.24s}.btn:hover{background:rgba(207,168,93,.07);transform:translateY(-1px)}
+main{padding:70px 0 100px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:54px;align-items:end;margin-bottom:42px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(52px,6vw,88px);line-height:.94;font-weight:400;letter-spacing:-.025em;margin:14px 0 20px}.hero h1 em{font-size:.48em;color:var(--gold-soft);font-weight:400;letter-spacing:0}.hero p{color:#c8d1d3;font-size:16px;line-height:1.72;max-width:680px}.facts{border:1px solid var(--line);border-radius:24px;background:var(--glass);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);padding:25px 28px}.fact{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}.fact:last-child{border-bottom:0}.fact small{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.15em;font-size:9px;margin-bottom:7px}.fact strong{font-size:15px;font-weight:500}
+.gallery-shell{position:relative;margin:16px 0 60px}.mosaic{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.72fr);gap:14px;height:min(520px,48vw);min-height:410px}.media-card{position:relative;overflow:hidden;border-radius:25px;border:1px solid rgba(255,255,255,.10);background:#061821;box-shadow:0 24px 70px rgba(0,0,0,.20)}.media-card img{width:100%;height:100%;display:block;object-fit:cover}.media-card::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.03),rgba(0,0,0,.12))}.side-stack{position:relative;display:grid;grid-template-rows:1fr 1fr;gap:14px;min-width:0}.secondary{opacity:1;transition:opacity .26s ease,transform .38s ease}.secondary.changing{opacity:.18;transform:translateX(8px)}
+.side-arrow{position:absolute;z-index:4;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.26);background:rgba(4,21,30,.32);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;font-size:23px;cursor:pointer;transition:.22s}.side-arrow:hover{background:rgba(7,37,49,.62);border-color:rgba(214,173,89,.62)}.side-arrow.prev{left:14px}.side-arrow.next{right:14px}.gallery-meta{display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-top:13px}.dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.25);cursor:pointer}.dot.active{background:var(--gold)}
+.map-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:22px;align-items:stretch}.panel{border:1px solid var(--line);border-radius:24px;background:var(--glass);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);overflow:hidden}.address{padding:34px}.address h2{font-family:Georgia,"Times New Roman",serif;font-size:36px;line-height:1.05;font-weight:400;margin:10px 0 20px}.address p{color:var(--muted);line-height:1.76}.address a{display:inline-block;margin-top:12px;color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.14em}.map iframe{width:100%;height:100%;min-height:390px;border:0;filter:saturate(.68) contrast(.95)}.note{margin-top:24px;color:#8fa1a7;font-size:12px;line-height:1.7}
+@media(max-width:1100px){.nav{grid-template-columns:auto auto}.navlinks{display:none}.brand{min-width:auto}.nav-actions{justify-self:end}.hero{grid-template-columns:1fr}.mosaic{height:500px}}
+@media(max-width:760px){.wrap{width:min(100% - 28px,var(--max))}.nav{min-height:74px}.brand-logo-img{width:68px;height:44px}.brand-title{font-size:18px}.nav-actions .btn{display:none}main{padding-top:48px}.hero{gap:18px}.mosaic{grid-template-columns:1fr;height:auto;min-height:0}.media-card.main{aspect-ratio:4/3}.side-stack{grid-template-columns:1fr 1fr;grid-template-rows:none}.side-stack .media-card{aspect-ratio:1.18/1}.side-arrow{width:42px;height:42px}.map-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="ocean-site">
+<div class="spotlight"></div><div class="grain"></div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="London Nova Short Film Festival">
+      <img class="brand-logo-img" src="london-nova-wave-film-emblem.png" alt="London Nova wave emblem">
+      <div class="brand-title">LONDON NOVA<span class="sub">SHORT FILM FESTIVAL</span></div>
+    </a>
+    <nav class="navlinks">
+      <details class="nav-drop">
+        <summary>About</summary>
+        <div class="nav-menu">
+          <a href="index.html#manifesto"><span class="nav-icon">◌</span><span><strong>Curatorial Vision</strong><small>Why London Nova exists</small></span></a>
+          <a href="rules.html"><span class="nav-icon">§</span><span><strong>Rules & Terms</strong><small>Eligibility, rights and submission terms</small></span></a>
+          <a href="index.html#jury"><span class="nav-icon">◯</span><span><strong>Jury Philosophy</strong><small>How films are considered</small></span></a>
+        </div>
+      </details>
+      <details class="nav-drop">
+        <summary>1st Edition</summary>
+        <div class="nav-menu">
+          <a href="venue.html"><span class="nav-icon">⌖</span><span><strong>Screening Venue</strong><small>Cinema A · London Film School</small></span></a>
+          <a href="feedback.html"><span class="nav-icon">◔</span><span><strong>Feedback</strong><small>Reviews, questions & replies</small></span></a>
+        </div>
+      </details>
+      <a href="news.html">News & Events</a>
+      <a href="index.html#submit">Submit</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-account" href="account.html">My Account</a>
+    </nav>
+    <div class="nav-actions"><a class="btn" href="index.html">← Back to festival</a></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <div class="eyebrow">1st Edition · Official Screening Venue</div>
+      <h1>Cinema A<br><em>London Film School</em></h1>
+      <p>London Nova Short Film Festival's inaugural screening takes place at Cinema A in the London Film School's Shelton Street Building, in the heart of Covent Garden.</p>
+    </div>
+    <aside class="facts">
+      <div class="fact"><small>Date</small><strong>13 March 2027</strong></div>
+      <div class="fact"><small>Venue</small><strong>Cinema A · London Film School</strong></div>
+      <div class="fact"><small>Address</small><strong>24 Shelton Street, London, WC2H 9UB</strong></div>
+      <div class="fact"><small>Capacity</small><strong>Up to 100 seats</strong></div>
+    </aside>
+  </section>
+
+  <section class="gallery-shell" aria-label="Cinema A gallery">
+    <div class="mosaic">
+      <div class="media-card main"><img src="cinemaA2.jpeg" alt="Cinema A at London Film School"></div>
+      <div class="side-stack" id="secondaryGallery">
+        <div class="media-card secondary"><img id="secondaryOne" src="cinemaA3.jpeg" alt="Cinema A screening room"></div>
+        <div class="media-card secondary"><img id="secondaryTwo" src="cinemaA4.jpeg" alt="Cinema A interior"></div>
+        <button class="side-arrow prev" type="button" aria-label="Previous venue images">‹</button>
+        <button class="side-arrow next" type="button" aria-label="Next venue images">›</button>
+      </div>
+    </div>
+    <div class="gallery-meta" id="galleryDots" aria-label="Gallery navigation"></div>
+  </section>
+
+  <section class="map-grid">
+    <div class="panel address">
+      <div class="eyebrow">Getting here</div>
+      <h2>Covent Garden,<br>Central London.</h2>
+      <p><strong>London Film School<br>24 Shelton Street<br>London WC2H 9UB</strong></p>
+      <p>Just a few minutes’ walk from Covent Garden, the Shelton Street venue places the festival in the heart of central London, surrounded by theatres, cafés and excellent transport connections.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=London+Film+School+24+Shelton+Street+London+WC2H+9UB" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+    </div>
+    <div class="panel map"><iframe title="Google Map — London Film School Shelton Street" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=London%20Film%20School%2C%2024%20Shelton%20Street%2C%20London%20WC2H%209UB&output=embed"></iframe></div>
+  </section>
+  <p class="note">Screening details and attendee information will be updated as the festival approaches.</p>
+</main>
+</div>
 <script>
-(()=>{const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('.dot')];let i=0;function show(n){i=(n+slides.length)%slides.length;slides.forEach((s,x)=>s.classList.toggle('active',x===i));dots.forEach((d,x)=>d.classList.toggle('active',x===i))}document.querySelector('.next').addEventListener('click',()=>show(i+1));document.querySelector('.prev').addEventListener('click',()=>show(i-1));dots.forEach((d,x)=>d.addEventListener('click',()=>show(x)));document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(i+1);if(e.key==='ArrowLeft')show(i-1)})})();
-</script></body></html>
+(()=>{
+  // Add future venue photos here; the right-hand mosaic will automatically cycle through them two at a time.
+  const images=[
+    {src:'cinemaA3.jpeg',alt:'Cinema A screening room'},
+    {src:'cinemaA4.jpeg',alt:'Cinema A interior'},
+    {src:'cinemaA5.jpeg',alt:'London Film School Shelton Street exterior'}
+  ];
+  let index=0;
+  const one=document.getElementById('secondaryOne'),two=document.getElementById('secondaryTwo');
+  const cards=[...document.querySelectorAll('.secondary')],dots=document.getElementById('galleryDots');
+  images.forEach((_,i)=>{const d=document.createElement('button');d.className='dot'+(i===0?' active':'');d.type='button';d.setAttribute('aria-label','Gallery position '+(i+1));d.addEventListener('click',()=>show(i));dots.appendChild(d)});
+  function show(n){index=(n+images.length)%images.length;cards.forEach(c=>c.classList.add('changing'));setTimeout(()=>{const a=images[index],b=images[(index+1)%images.length];one.src=a.src;one.alt=a.alt;two.src=b.src;two.alt=b.alt;cards.forEach(c=>c.classList.remove('changing'));[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===index))},150)}
+  document.querySelector('.side-arrow.next').addEventListener('click',()=>show(index+1));
+  document.querySelector('.side-arrow.prev').addEventListener('click',()=>show(index-1));
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(index+1);if(e.key==='ArrowLeft')show(index-1)});
+})();
+</script>
+</body>
+</html>
