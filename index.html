@@ -166,6 +166,11 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 @media(max-width:1100px){.nav-actions{display:flex;gap:10px}.nav-actions .submit-expand{display:none}}
 @media(max-width:720px){.submit-expand{display:flex;flex-wrap:wrap}.submit-expand .submit-secondary{position:static;height:auto;opacity:1;visibility:visible;pointer-events:auto;transform:none;margin-top:8px;margin-left:8px}}
 
+
+/* Venue update — restrained Apple-like glass treatment */
+.screening-card{background:linear-gradient(145deg,rgba(13,58,72,.22),rgba(2,16,23,.10));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.screening-card .screening-date{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;margin:4px 0 14px}
+.screening-card p strong{color:#f1eee8;font-weight:500}
 </style>
 </head>
 <body>
@@ -191,6 +196,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
         <div class="nav-menu">
           <a href="#categories"><span class="nav-icon">◌</span><span><strong>Categories</strong><small>Four competition programmes</small></span></a>
           <a href="#screening"><span class="nav-icon">▱</span><span><strong>Screening</strong><small>London cinema programme</small></span></a>
+          <a href="venue.html"><span class="nav-icon">⌖</span><span><strong>About Venue</strong><small>Cinema A · London Film School</small></span></a>
           <a href="#jury"><span class="nav-icon">◯</span><span><strong>Jury</strong><small>The jury</small></span></a>
           <a href="feedback.html"><span class="nav-icon">◔</span><span><strong>Feedback</strong><small>Reviews, questions & replies</small></span></a>
         </div>
@@ -223,7 +229,7 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
       <div class="hero-actions"><a class="btn arrow" href="direct-submit.html">Submit your film</a><a class="btn arrow" href="#manifesto">About the festival</a></div>
     </div>
   </div>
-  <div class="edition-stamp"><span>1st Edition</span><b>2026</b><i>London, UK</i></div>
+  <div class="edition-stamp"><span>1st Edition</span><b>2027</b><i>London, UK</i></div>
 </section>
 
 <section class="section" id="manifesto">
@@ -239,9 +245,9 @@ footer h4{font-size:10px;letter-spacing:.18em;color:var(--gold);text-transform:u
 <section class="section" id="edition">
   <div class="wrap">
     <div class="edition-grid">
-      <div class="edition-intro"><div><div class="section-label">London · 2026</div><h2>1ST EDITION</h2><p>Our inaugural London edition: six curated competition categories, cinema screenings and conversations around short-form work.</p></div><a class="card-link" href="#categories">Explore categories →</a></div>
+      <div class="edition-intro"><div><div class="section-label">London · 2027</div><h2>1ST EDITION</h2><p>Our inaugural London edition: four curated competition categories, a live cinema screening and conversations around short-form work.</p></div><a class="card-link" href="#categories">Explore categories →</a></div>
       <article class="edition-card" id="categories"><svg class="icon-line" viewBox="0 0 70 70" fill="none"><path d="M14 17h18v18H14zM38 17h18v18H38zM14 41h18v18H14zM38 41h18v18H38z" stroke="currentColor" stroke-width="1.6"/></svg><h3>CATEGORIES</h3><p>Four tightly curated programmes exploring humanity, narrative, form and reality.</p><a class="card-link" href="#competition-categories">Explore all four →</a></article>
-      <article class="edition-card" id="screening"><svg class="icon-line" viewBox="0 0 70 70" fill="none"><path d="M13 27h44v30H13zM13 27l43-14 2 10-45 14" stroke="currentColor" stroke-width="1.8"/><path d="M22 22l7 7M36 17l7 7M50 13l7 7M22 39h26" stroke="currentColor" stroke-width="1.4"/></svg><h3>SCREENING</h3><p>Selected films will be presented to a live audience in London as part of the inaugural cinema programme.</p><span class="card-link">Details soon</span></article>
+      <article class="edition-card screening-card" id="screening"><svg class="icon-line" viewBox="0 0 70 70" fill="none"><path d="M13 27h44v30H13zM13 27l43-14 2 10-45 14" stroke="currentColor" stroke-width="1.8"/><path d="M22 22l7 7M36 17l7 7M50 13l7 7M22 39h26" stroke="currentColor" stroke-width="1.4"/></svg><div class="screening-date">13 MARCH 2027</div><h3>SCREENING</h3><p><strong>Cinema A · London Film School</strong><br>24 Shelton Street, London, WC2H 9UB</p><a class="card-link" href="venue.html">Explore the venue →</a></article>
       <article class="edition-card" id="jury"><div class="jury-silhouette"><div class="head"></div><div class="body"></div></div><h3>JURY</h3><p>A multidisciplinary jury spanning filmmaking, criticism, scholarship, journalism and production.</p><span class="card-link">Coming soon</span></article>
       <article class="edition-card" id="feedback"><svg class="icon-line" viewBox="0 0 70 70" fill="none"><path d="M14 17h42v30H31L20 56v-9h-6z" stroke="currentColor" stroke-width="1.8"/><path d="M24 29h22M24 36h16" stroke="currentColor" stroke-width="1.4"/></svg><h3>FEEDBACK</h3><p>Every submitted film is carefully reviewed across multiple aspects by our festival team and expert reviewers. Whether or not a film is selected, filmmakers receive detailed written feedback.</p><a class="card-link" href="feedback.html">View your feedback →</a></article>
     </div>
